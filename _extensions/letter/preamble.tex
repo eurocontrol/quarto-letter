@@ -1,0 +1,192 @@
+\usepackage{afterpage}
+\usepackage{worldflags}
+
+
+\definecolor{prussianblue}{RGB}{0,51,102}
+\definecolor{bluedefrance}{RGB}{41,144,234}
+\definecolor{gray40}{gray}{0.4}
+
+\newcommand{\ecrule}[3][bluedefrance]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Find signature file
+% Other images include full path in case user sets graphicspath
+\graphicspath{{_extensions/eurocontrol/letter/}}
+
+
+\newenvironment{reftabular}[1][1]{%
+  \renewcommand*{\arraystretch}{#1}%
+  \tabular%
+}{%
+  \endtabular
+}
+
+% \newcommand{\reflab}[1]{\textcolor{gray40}{\scriptsize{#1}}}
+% \newcommand{\refval}[1]{\small{#1}}
+\newcommand{\reflab}[1]{#1}
+\newcommand{\refval}[1]{#1}
+
+
+\newcommand*{\makeheader}{%
+  \thispagestyle{empty}
+
+
+  \begin{textblock*}{80mm}(18mm,11mm)
+  {%
+    \textcolor{bluedefrance}{%
+      \fontsize{10}{5}\selectfont\sffamily
+      EUROCONTROL}\\
+    \textcolor{prussianblue}{%
+      \fontsize{9}{15}\selectfont\sffamily
+      \MakeUppercase{\ecdirectorate}}\\
+    \textcolor{bluedefrance}{%
+      \fontsize{9}{15}\selectfont\sffamily
+      \ecdirectorateaddress\\
+      \ecdirectorateetal}
+  }
+  \end{textblock*}
+
+  \begin{textblock*}{186mm}(12mm,35mm)
+    \ecrule{\hsize}{1pt}
+  \end{textblock*}
+
+  % Fold marks
+  %   on one third
+  \begin{textblock*}{2mm}(4mm,98.3mm)
+    \rule{\hsize}{0.1pt}
+  \end{textblock*}
+  %   on half
+  \begin{textblock*}{4mm}(4mm,148mm)
+    \rule{\hsize}{0.1pt}
+  \end{textblock*}
+  %   on two third
+  \begin{textblock*}{2mm}(4mm,196.7mm)
+    \rule{\hsize}{0.1pt}
+  \end{textblock*}%
+
+  \begin{textblock}{2.3}(17.2,0.5)
+    \includegraphics[height=2.7cm]{_extensions/eurocontrol/letter/eurocontrol_logo}
+  \end{textblock}%
+
+  % Reference
+  \begin{textblock*}{90mm}(14mm,39mm)
+  {%
+    \fontsize{9}{8}\selectfont\sffamily\color[gray]{0.4}%
+    \begin{reftabular}[1.7]{r@{ }l}
+      \reflab{Date}:           & \refval{\printdate}                      \\
+      \reflab{Our reference}:  & \refval{\ecourref}                 \\
+      \reflab{Your reference}: & \refval{\ecyourref}                \\
+      \reflab{Contact}:        & \begin{reftabular}[1.1][t]{@{}l@{}}
+                                   \ecfrom
+                                  \end{reftabular}                   \\
+      \reflab{Phone}:          & \refval{\ecfromphone}               \\
+      \reflab{E-mail}:         & \refval{\ecfromemail}               \\
+      \reflab{Subject}:        & \refval{\textbf{\ecsubject}}        \\
+      \reflab{Encl.}:          & \begin{reftabular}[1.1][t]{@{}l@{}}
+                                   \ecencl
+                                  \end{reftabular}                   \\
+    \end{reftabular}
+  }
+  \end{textblock*}
+
+  % Addressee
+  \begin{textblock*}{80mm}(110mm,44mm)
+  {%
+    \fontsize{9}{8}\selectfont\sffamily\color[gray]{0.4}%
+    \begin{reftabular}[1.3]{r@{ }l}
+      \reflab{To}:          & \begin{reftabular}[1.1][t]{@{}l@{}}
+                                \ecto
+                              \end{reftabular}                \\
+      \reflab{Address}:     & \begin{reftabular}[1.1][t]{@{}l@{}}
+                                \ectoaddress
+                              \end{reftabular}                \\
+    \end{reftabular}
+  }
+  \end{textblock*}
+
+
+  \begin{textblock*}{186mm}(12mm,250mm)
+    \ecrule[prussianblue]{\hsize}{1pt}
+  \end{textblock*}
+
+  \begin{textblock*}{186mm}(12mm,253mm)
+  {%
+    % \fontsize{10}{6}\selectfont\sffamily\color[prussianblue]{0.4}
+    \fontsize{10}{5}\selectfont\sffamily
+    \textsc{\textbf{\textcolor{prussianblue}{Supporting European Aviation}}}\\
+    % \vspace{1mm}
+    %
+    \fontsize{9}{5}\selectfont\sffamily\color[gray]{0.3}
+    \textbf{Member States:} Albania, Armenia, Austria, Belgium, Bosnia and Herzegovina, Bulgaria,
+    Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Georgia, Germany, Greece,
+    Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Monaco, Montenegro, Netherlands,
+    North Macedonia, Norway, Poland, Portugal, Republic of Moldova, Romania, Serbia, Slovakia,
+    Slovenia, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Kingdom.
+    \\
+    \textbf{Comprehensive Agreement States:} Israel, Morocco.
+  }
+  \end{textblock*}
+
+
+  \begin{textblock}{9.5}(10.5,27.8)\hfill
+    \includegraphics[height=1.2cm]{_extensions/eurocontrol/letter/Logo_SDM}\hspace{5mm}
+    \includegraphics[height=1.2cm]{_extensions/eurocontrol/letter/Logo_SJU}\hspace{3.5mm}
+    \includegraphics[height=1.2cm]{_extensions/eurocontrol/letter/Logo_NM}
+  \end{textblock}
+
+
+
+}
+
+
+\makeatletter
+\@ifundefined{opening}{}{%
+  \renewcommand*{\opening}[1]{%
+    \newgeometry{top=94mm,bottom=52mm,left=38mm,right=13mm}
+    \makeheader
+    % \vspace*{42mm}
+    #1\par\nobreak
+    \vspace{1.4\parskip}
+    \afterpage{\globaldefs=1 \restoregeometry}
+  }
+}
+\makeatother
+
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+
+
+\flagsdefault[width=4mm]
+
+\renewcommand{\headrulewidth}{0pt} % no rule in header in general
+\fancyhf{} % clear existing header/footer entries
+\fancyhead[C]{\small Page~\thepage{}~of~\pageref{LastPage}}
+\fancyfoot[L]{%
+  \begin{textblock*}{200mm}(12mm,261mm)
+    \includegraphics[height=1.7cm]{_extensions/eurocontrol/letter/footer_rule}
+  \end{textblock*}
+  \begin{textblock*}{186mm}(12mm,275mm)
+    \worldflag{AL} \worldflag{AM} \worldflag{AT} \worldflag{BE} \worldflag{BA} \worldflag{BG}
+    \worldflag{HR} \worldflag{CY} \worldflag{CZ} \worldflag{DK} \worldflag{EE} \worldflag{FI}
+    \worldflag{FR} \worldflag{GE} \worldflag{DE} \worldflag{GR} \worldflag{HU} \worldflag{IE}
+    \worldflag{IT} \worldflag{LV} \worldflag{LT} \worldflag{LU} \worldflag{MT} \worldflag{MC}
+    \worldflag{ME} \worldflag{NL} \worldflag{MK} \worldflag{NO} \worldflag{PL} \worldflag{PT}
+    \worldflag{MD} \worldflag{RO} \worldflag{RS} \worldflag{SK} \worldflag{SI} \worldflag{ES}
+    \worldflag{SE} \worldflag{CH} \worldflag{TR} \worldflag{UA} \worldflag{GB}\\
+    \worldflag{IL} \worldflag{MA}
+  \end{textblock*}
+}
+
+% \fancypagestyle{plain}{%
+%   \renewcommand{\headrulewidth}{0pt}%
+%   \fancyhf{} % clear existing header/footer entries
+%   % \chead{\small Page~\thepage{}~of~\pageref{LastPage}}
+%   \fancyhead[C]{\small Page~\thepage{}~of~\pageref{LastPage}}%
+% }
+
+
+%%%%%%%%%%%%%%%%%%%
+
+

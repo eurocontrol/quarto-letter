@@ -1,0 +1,14 @@
+title: Eurocontrol Letterhead Format Template
+author: Enrico Spinielli
+version: 0.1.0
+contributes:
+  formats:
+    common:
+      date-format: long
+    pdf:
+      pdf-engine: pdflatex
+      template: "eurocontrolletter.tex"
+      format-resources:
+        - "assets/worldflag_MC.tex"
+        - "assets/signature.png"
+        - "preamble.tex"

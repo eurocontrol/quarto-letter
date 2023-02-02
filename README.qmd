@@ -1,0 +1,56 @@
+---
+format: gfm
+---
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+```{r}
+#| include: false
+# Create pdf and png version of template
+library(tidyverse)
+library(quarto)
+library(magick)
+
+# Render template
+fs::dir_copy("_extensions/letter", "_extensions/eurocontrol/letter", overwrite = TRUE)
+quarto_render(input = "template.qmd")
+fs::dir_delete("_extensions/eurocontrol")
+# Convert rendered PDF to PNG
+image_read_pdf("template.pdf", pages = c(1, 2, 3)) |>
+  image_montage(geometry = "x500+25+35", tile = "3x1", bg = "grey92", shadow = TRUE) |>
+  image_convert(format = "png") |>
+  image_write("examples/template.png")
+# Move pdf to examples folder
+fs::file_move("template.pdf", "examples/template.pdf")
+```
+
+# EUROCONTROL Letter Format Template
+
+This is a Quarto template that assists you in creating a letter on EUROCONTROL letterhead
+
+## Creating a new letter
+
+You can use this as a template to create a letter.
+To do this, use the following command:
+
+```bash
+quarto use template eurocontrol/quarto-letter
+```
+
+This will install the extension and create an example qmd file that you can use as a starting place for your letter.
+
+**NOTE**: please soon after the creation of your letter remember to render the qmd twice for the first time.
+This will copy the needed files 
+
+## Installation for existing document
+
+You may also use this format with an existing Quarto project or document.
+From the quarto project or document directory, run the following command to install this format:
+
+```bash
+quarto install extension eurocontrol/quarto-letter
+```
+
+## Example
+
+[![](examples/template.png)](examples/template.pdf)

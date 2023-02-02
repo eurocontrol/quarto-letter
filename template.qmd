@@ -1,0 +1,117 @@
+---
+date: "2023-01-22"
+date-format: "Do MMM YYYY"
+subject: What about a quantic leap?
+
+keep-tex: true
+
+ourreference: "ABC123"
+yourreference: "DEF456"
+fromname:
+  - Prof. Richard P. Feynman
+  - Head of Quantic Aviation Unit
+fromemail: "richard.feynman@eurocontrol.int"
+fromphone: '+32-2-729.4242'
+signatureimage: signature.png
+directorate: "European Green Sky Directorate"
+directorateaddress:  "Rue de la Fusée 96, 1130 Brussels, Belgium"
+directorateetal: "Tel.: +32-2-729.90.11     www.eurocontrol.int"
+
+toname:
+  - Prof. Franz Schulz
+  - Rector magnificus
+toaddress:
+  - University of Munich
+  - Unterwasser straße, 42
+  - Munich
+  - Germany
+
+opening: "Dear Franz,"
+closing: "Kind regards"
+ps: |
+  PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
+encl:
+  - cucu.pdf
+  - another.txt
+
+include-in-header:
+  - preamble.tex
+
+format: letter-pdf
+---
+I am writing this letter to let you know that an extraordinary event happened: we have a
+Quarto template/extension for EUROCONTROL letterhead!
+
+This has not been an easy endeauvour but with the help of `StackOverflow` we managed to
+get something working.
+
+ 
+
+
+
+## How to use it
+
+You can use this extension as a template to create a letter.
+This is following the official letterhead setup of EUROCONTROL.
+
+To do this, use the following command:
+
+```bash
+quarto use template eurocontrol/quarto-letter
+```
+
+This will install the extension and create an example `qmd` file that you can use as a starting
+place for your letter.
+
+**NOTE**: please soon after the creation of your letter qmd file remember to render twice
+for the first time. The first time the necessary files below will be copried from the 
+`_extension` folder and remain in the root directory of the document and be used for the following
+one.
+
+You will see that there are few files hanging around:
+
+* `preamble.tex`: all the definitions for the letterhead and header \& footers are here.
+  
+  It would be better to have them hidden from the final user but, alas, this is for some
+  other time
+  
+* `worldflag_MC.tex`: this is the definition for the flag of Monaco, which is unfortunately
+  missing from the [`worldflags`](https://ctan.org/pkg/worldflags?lang=en) package.
+  
+  We have signaled the issue with the author so at some time in the future this flag
+  could be part of the standard set and not needed anymore in this extension.
+
+* `signature.png`: this is the scan of the signature; please replace it with yours
+   and/or adapt the YAML accordingly (you can avoid it alltogether by simply removing
+   the `signature:` line in the YAML)
+ 
+
+
+
+## Installation for existing document
+
+You may also use this format with an existing Quarto project or document.
+From the quarto project or document directory, run the following command to install this format:
+
+```bash
+quarto install extension eurocontrol/quarto-letter
+```
+
+
+## Filling with some text
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum massa vel feugiat sodales. Sed at tellus eros. Nulla facilisi. Phasellus dui sapien, interdum eget est id, pellentesque gravida ante. Proin in aliquet ex, vitae ultrices libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sollicitudin hendrerit pharetra. Donec ultricies congue urna non pulvinar.
+
+Vestibulum ac elit pharetra, faucibus risus quis, egestas velit. Sed vulputate aliquam est, sed volutpat tellus ultrices eu. Ut at euismod nulla. Cras interdum vitae nibh elementum gravida. Aenean commodo eget est vitae interdum. Nullam pulvinar auctor dignissim. Duis a arcu augue. Aliquam auctor efficitur finibus. Pellentesque eu viverra eros. Morbi a luctus mi. In vulputate ante quis nulla porttitor imperdiet. Duis consequat dictum arcu id aliquet. Integer nec felis non erat tincidunt rutrum. Mauris lobortis lacinia quam. Aliquam tincidunt ante ultricies faucibus bibendum. Vestibulum in vulputate est, ut mattis tortor.
+
+Vestibulum efficitur justo non quam laoreet ultrices. Sed interdum massa felis. Quisque tristique ullamcorper mauris, sed placerat augue bibendum eget. Quisque non ultrices sem. Nunc scelerisque accumsan ultricies. Curabitur porttitor cursus elit ut tincidunt. Aenean ac varius mi. Integer at ipsum bibendum eros tempus pretium nec vel diam.
+
+Praesent sodales varius commodo. Pellentesque convallis accumsan fermentum. Proin eleifend blandit nisl, sed elementum libero eleifend ut. Fusce mollis, velit nec finibus laoreet, nunc mi elementum odio, in aliquet tellus purus accumsan nisi. Donec vel lacus orci. 
+
+Morbi euismod eleifend orci vel lacinia. Phasellus vitae ligula libero. Vestibulum bibendum velit at posuere pulvinar. Suspendisse potenti. Nunc consequat nisi eu purus bibendum, non tincidunt nulla varius. Aenean non risus ex. Morbi tincidunt mi sit amet erat porttitor, vel ullamcorper nisi vulputate. Ut vitae diam cursus, blandit nulla in, mollis dui. 
+
+Sed malesuada elementum iaculis.
+
+Nulla sagittis nibh nec molestie iaculis. Suspendisse a libero enim. Maecenas mollis in orci eu iaculis. Fusce condimentum elit sed leo porta, eu luctus diam fermentum. Donec posuere condimentum libero sodales blandit. Donec elementum velit vel arcu bibendum, vel tempor purus convallis. Etiam rutrum pellentesque dictum. Suspendisse auctor urna mattis porta semper.
+
+Curabitur molestie nulla odio, a facilisis nisl ullamcorper non. In gravida vulputate dolor, vel blandit orci eleifend ac. Praesent ornare ullamcorper tortor in tempor. Vestibulum ultricies magna ante, non scelerisque augue iaculis vulputate. Mauris suscipit ligula sed felis laoreet, in tempor eros bibendum. Sed quis porta massa.
