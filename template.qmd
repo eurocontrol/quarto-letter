@@ -63,6 +63,7 @@ quarto use template eurocontrol/quarto-letter
 This will install the extension and create an example `qmd` file that you can use as a starting
 place for your letter.
 
+
 **NOTE**: please soon after the creation of your letter qmd file remember to render twice
 for the first time. The first time the necessary files below will be copried from the 
 `_extension` folder and remain in the root directory of the document and be used for the following
@@ -91,12 +92,14 @@ You will see that there are few files hanging around:
 ## Installation for existing document
 
 You may also use this format with an existing Quarto project or document.
-From the quarto project or document directory, run the following command to install this format:
+From the quarto project or document directory, run the following command to install this format[^1]:
+
 
 ```bash
 quarto install extension eurocontrol/quarto-letter
 ```
 
+[^1]: this is a footnote...
 
 ## Filling with some text
 
