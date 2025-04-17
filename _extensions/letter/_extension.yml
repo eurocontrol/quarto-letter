@@ -9,6 +9,5 @@ contributes:
       pdf-engine: pdflatex
       template: "eurocontrolletter.tex"
       format-resources:
-        - "assets/worldflag_MC.tex"
         - "assets/signature.png"
         - "preamble.tex"
