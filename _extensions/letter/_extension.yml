@@ -1,6 +1,6 @@
 title: Eurocontrol Letterhead Format Template
 author: Enrico Spinielli
-version: 0.1.0
+version: 0.1.1
 contributes:
   formats:
     common:

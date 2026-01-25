@@ -1,4 +1,5 @@
 
+
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
 # EUROCONTROL Letter Format Template
@@ -15,11 +16,12 @@ following command:
 quarto use template eurocontrol/quarto-letter
 ```
 
-This will install the extension and create an example qmd file that you
-can use as a starting place for your letter.
+This will install the extension and create an example `qmd` file that
+you can use as a starting place for your letter.
 
 **NOTE**: please soon after the creation of your letter remember to
-render the qmd twice for the first time. This will copy the needed files
+render the `qmd` twice for the first time. This will copy the needed
+files
 
 ## Installation for existing document
 
@@ -33,8 +35,4 @@ quarto install extension eurocontrol/quarto-letter
 
 ## Example
 
-<div>
-
 [![](examples/template.png)](examples/template.pdf)
-
-</div>

@@ -39,11 +39,11 @@ include-in-header:
 
 format: letter-pdf
 ---
-I am writing this letter to let you know that an extraordinary event happened: we have a
-Quarto template/extension for EUROCONTROL letterhead!
+I am writing this letter to let you know that an extraordinary event happened:
+we have a Quarto template/extension for EUROCONTROL letterhead!
 
-This has not been an easy endeauvour but with the help of `StackOverflow` we managed to
-get something working.
+This has not been an easy endeavour but with the help of `StackOverflow` 
+we managed to get something working.
 
  
 
@@ -60,31 +60,27 @@ To do this, use the following command:
 quarto use template eurocontrol/quarto-letter
 ```
 
-This will install the extension and create an example `qmd` file that you can use as a starting
-place for your letter.
+This will install the extension and create an example `qmd` file that you can
+use as a starting place for your letter.
 
 
-**NOTE**: please soon after the creation of your letter qmd file remember to render twice
-for the first time. The first time the necessary files below will be copried from the 
-`_extension` folder and remain in the root directory of the document and be used for the following
-one.
+**NOTE**: please soon after the creation of your letter `qmd` file remember
+to render twice for the first time.
+The first time the necessary files below will be copried from the 
+`_extension` folder and remain in the root directory of the document and 
+be used for the following one.
 
 You will see that there are few files hanging around:
 
-* `preamble.tex`: all the definitions for the letterhead and header \& footers are here.
+* `preamble.tex`: all the definitions for the letterhead and header \& 
+  footers are here.
   
-  It would be better to have them hidden from the final user but, alas, this is for some
-  other time
+  It would be better to have them hidden from the final user but, alas,
+  this is for some other time
   
-* `worldflag_MC.tex`: this is the definition for the flag of Monaco, which is unfortunately
-  missing from the [`worldflags`](https://ctan.org/pkg/worldflags?lang=en) package.
-  
-  We have signaled the issue with the author so at some time in the future this flag
-  could be part of the standard set and not needed anymore in this extension.
-
-* `signature.png`: this is the scan of the signature; please replace it with yours
-   and/or adapt the YAML accordingly (you can avoid it alltogether by simply removing
-   the `signature:` line in the YAML)
+* `signature.png`: this is the scan of the signature; please replace it with
+   yours and/or adapt the YAML accordingly (you can avoid it altogether by
+   simply removing the `signature:` line in the YAML)
  
 
 
@@ -92,7 +88,8 @@ You will see that there are few files hanging around:
 ## Installation for existing document
 
 You may also use this format with an existing Quarto project or document.
-From the quarto project or document directory, run the following command to install this format[^1]:
+From the quarto project or document directory, run the following command to
+install this format[^1]:
 
 
 ```bash

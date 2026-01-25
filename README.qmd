@@ -10,6 +10,7 @@ format: gfm
 library(tidyverse)
 library(quarto)
 library(magick)
+library(pdftools)
 
 # Render template
 fs::dir_copy("_extensions/letter", "_extensions/eurocontrol/letter", overwrite = TRUE)
@@ -37,15 +38,19 @@ To do this, use the following command:
 quarto use template eurocontrol/quarto-letter
 ```
 
-This will install the extension and create an example qmd file that you can use as a starting place for your letter.
+This will install the extension and create an example `qmd` file that
+you can use as a starting place for your letter.
 
-**NOTE**: please soon after the creation of your letter remember to render the qmd twice for the first time.
+**NOTE**: please soon after the creation of your letter remember to render
+the `qmd` twice for the first time.
 This will copy the needed files 
+
 
 ## Installation for existing document
 
 You may also use this format with an existing Quarto project or document.
-From the quarto project or document directory, run the following command to install this format:
+From the quarto project or document directory, run the following command to
+install this format:
 
 ```bash
 quarto install extension eurocontrol/quarto-letter
