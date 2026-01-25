@@ -34,9 +34,6 @@ encl:
   - cucu.pdf
   - another.txt
 
-include-in-header:
-  - preamble.tex
-
 format: letter-pdf
 ---
 I am writing this letter to let you know that an extraordinary event happened:
@@ -64,23 +61,13 @@ This will install the extension and create an example `qmd` file that you can
 use as a starting place for your letter.
 
 
-**NOTE**: please soon after the creation of your letter `qmd` file remember
-to render twice for the first time.
-The first time the necessary files below will be copried from the 
-`_extension` folder and remain in the root directory of the document and 
-be used for the following one.
-
-You will see that there are few files hanging around:
-
-* `preamble.tex`: all the definitions for the letterhead and header \& 
-  footers are here.
-  
-  It would be better to have them hidden from the final user but, alas,
-  this is for some other time
-  
-* `signature.png`: this is the scan of the signature; please replace it with
-   yours and/or adapt the YAML accordingly (you can avoid it altogether by
-   simply removing the `signature:` line in the YAML)
+**NOTE**: please note that after the creation of your letter `qmd` file,
+the `signature.png` file will be copied from the 
+`_extension` folder.
+This is the scan of the signature; please replace it with
+yours and/or adapt the YAML accordingly.
+You can avoid to include a scanned signature altogether by
+simply removing the `signature:` line in the YAML.
  
 
 

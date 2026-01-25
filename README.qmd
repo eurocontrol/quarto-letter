@@ -23,6 +23,7 @@ image_read_pdf("template.pdf", pages = c(1, 2, 3)) |>
   image_write("examples/template.png")
 # Move pdf to examples folder
 fs::file_move("template.pdf", "examples/template.pdf")
+fs::file_delete(c("template.tex", "signature.png"))
 ```
 
 # EUROCONTROL Letter Format Template
