@@ -209,9 +209,9 @@ $endif$
 \newcommand{\ecfromphone}{$fromphone$}
 \newcommand{\ecfromemail}{$fromemail$}
 \newcommand{\ecsubject}{$subject$}
-\newcommand{\ecdirectorate}{$directorate$}
-\newcommand{\ecdirectorateaddress}{$directorateaddress$}
-\newcommand{\ecdirectorateetal}{$directorateetal$}
+\newcommand{\ecdirectorate}{$if(directorate)$$directorate$$else$Aviation Transformation Directorate$endif$}
+\newcommand{\ecdirectorateaddress}{$if(directorateaddress)$$directorateaddress$$else$Rue de la Fusée 96, 1130 Brussels, Belgium$endif$}
+\newcommand{\ecdirectorateetal}{$if(directorateetal)$$directorateetal$$else$Tel.: +32-2-729.90.11     www.eurocontrol.int$endif$}
 \newcommand{\ecencl}{$for(encl)$$encl$$sep$\\$endfor$}
 
 \newcommand{\ecto}{$for(toname)$$toname$$sep$\\$endfor$}
