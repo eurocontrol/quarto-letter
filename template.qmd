@@ -12,7 +12,10 @@ fromname:
   - Head of Quantic Aviation Unit
 fromemail: "richard.feynman@eurocontrol.int"
 fromphone: '+32-2-729.4242'
-signatureimage: signature.png
+
+signatureimage: _extensions/eurocontrol/letter/signature.png
+psvspace: -4.5em
+
 # directorate: "Aviation Transformation Directorate"
 # directorateaddress:  "Rue de la Fusée 96, 1130 Brussels, Belgium"
 # directorateetal: "Tel.: +32-2-729.90.11     www.eurocontrol.int"

@@ -84,6 +84,10 @@ as:
 
 - `closing`: The letter closing formula i.e. “Kind regards”
 
+- `psvspace`: vertical space to PS:, i.e. `-6.5em`. This can be useful
+  when using `signature` and pull up PS: due to the extra space taken by
+  the image
+
 - `ps`: the post-scriptum, i.e.
 
   ``` yml

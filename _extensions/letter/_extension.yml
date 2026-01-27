@@ -8,5 +8,3 @@ contributes:
     pdf:
       pdf-engine: pdflatex
       template: "eurocontrolletter.tex"
-      format-resources:
-        - "assets/signature.png"

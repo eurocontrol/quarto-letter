@@ -17,13 +17,12 @@ fs::dir_copy("_extensions/letter", "_extensions/eurocontrol/letter", overwrite =
 quarto_render(input = "template.qmd")
 fs::dir_delete("_extensions/eurocontrol")
 # Convert rendered PDF to PNG
-image_read_pdf("template.pdf", pages = c(1, 2, 3)) |>
-  image_montage(geometry = "x500+25+35", tile = "3x1", bg = "grey92", shadow = TRUE) |>
+image_read_pdf("template.pdf", pages = c(1, 2)) |>
+  image_montage(geometry = "x500+25+35", tile = "2x1", bg = "grey92", shadow = TRUE) |>
   image_convert(format = "png") |>
   image_write("examples/template.png")
 # Move pdf to examples folder
 fs::file_move("template.pdf", "examples/template.pdf")
-fs::file_delete(c("template.tex", "signature.png"))
 ```
 
 # EUROCONTROL Letter Format Template
@@ -90,6 +89,9 @@ Some keys/values are typical of a business letter, such as:
   ```
 * `opening`: The letter opening, i.e. "Dear Franz,"
 * `closing`: The letter closing formula i.e. "Kind regards"
+* `psvspace`: vertical space to PS:, i.e. `-6.5em`. This can be useful
+  when using `signature` and pull up PS: due to the extra space taken by
+  the image
 * `ps`: the post-scriptum, i.e.
   ```yml
   ps: |

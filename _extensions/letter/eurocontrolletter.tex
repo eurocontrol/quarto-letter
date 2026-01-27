@@ -459,6 +459,7 @@ $endfor$
 $body$
 \closing{$closing$$if(signatureimage)$\\[0.2cm]\hspace*{0.5cm}\includegraphics[height=1.5cm]{$signatureimage$}$endif$}
 $if(ps)$
+$if(psvspace)$\vspace{$psvspace$}$endif$
 \ps{$ps$}
 $endif$
 $for(include-after)$
